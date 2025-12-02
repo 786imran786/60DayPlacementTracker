@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60-Day Level Up Journey - Level Select</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation Header -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span>LevelUp</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="levels.html" class="nav-link active">Levels</a></li>
+                        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="score-display">
+                    <i class="fas fa-star score-icon"></i>
+                    <span id="levelsScore">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Levels Header -->
+                <div class="levels-header">
+                    <div class="levels-header-content">
+                        <h1>Level Select</h1>
+                        <p class="text-muted">Complete each level to unlock the next one. Each level represents one day of your journey.</p>
+                    </div>
+                    <div class="levels-actions">
+                        <a href="index.html" class="btn btn-secondary">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                        <a href="dashboard.html" class="btn btn-secondary">
+                            <i class="fas fa-chart-line"></i>
+                            Dashboard
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Progress Overview -->
+                <div class="card mb-6">
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Overall Progress</span>
+                            <span id="levelsProgressPercent">0%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="levelsProgressBar" class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between mt-4 text-sm">
+                        <span class="text-muted">Completed: <span id="completedCountDisplay">0</span>/60</span>
+                        <span class="text-muted">Current Level: <span id="currentLevelDisplay">1</span></span>
+                    </div>
+                </div>
+                
+                <!-- Levels Grid -->
+                <div class="levels-grid" id="levelsGrid">
+                    <!-- Levels will be dynamically generated here -->
+                </div>
+                
+                <!-- Legend -->
+                <div class="card">
+                    <h3 class="mb-4">Legend</h3>
+                    <div class="levels-legend">
+                        <div class="legend-item">
+                            <div class="level-card" style="width: 40px; height: 40px;">
+                                <div class="level-card-content">
+                                    <div class="level-number" style="font-size: 1rem;">1</div>
+                                </div>
+                                <div class="level-status">✔</div>
+                            </div>
+                            <span class="text-muted">Completed</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="level-card current" style="width: 40px; height: 40px;">
+                                <div class="level-card-content">
+                                    <div class="level-number" style="font-size: 1rem;">1</div>
+                                </div>
+                                <div class="level-status">⭐</div>
+                            </div>
+                            <span class="text-muted">Current</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="level-card locked" style="width: 40px; height: 40px;">
+                                <div class="level-card-content">
+                                    <div class="level-number" style="font-size: 1rem;">1</div>
+                                </div>
+                                <div class="level-status">🔒</div>
+                            </div>
+                            <span class="text-muted">Locked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="text-muted">© 2024 LevelUp Tracker. Track your 60-day journey to mastery.</p>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Privacy</a>
+                        <a href="#" class="footer-link">Terms</a>
+                        <a href="#" class="footer-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/levels.js"></script>
+</body>
+</html>

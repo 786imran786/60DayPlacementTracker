@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60-Day Level Up Journey | Track Your Progress</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Navigation -->
+<header class="site-header">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <span>LevelUp</span>
+        </a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="levels.html" class="nav-link">Levels</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+        </nav>
+        
+        <div class="score-display">
+            <i class="fas fa-star score-icon"></i>
+            <span id="homeScore">0</span>
+        </div>
+    </div>
+</header>
+        <!-- Hero Section -->
+        <main class="main-content">
+            <section class="hero-section">
+                <div class="hero-background"></div>
+                <div class="container">
+                    <h1 class="hero-title">60-Day Level Up Journey</h1>
+                    <p class="hero-subtitle">
+                        Transform your skills through a structured 60-day challenge. 
+                        Track progress, complete daily tasks, and level up your career.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-card fade-in">
+                            <div class="stat-value" id="completedCount">0</div>
+                            <div class="stat-label">Levels Completed</div>
+                        </div>
+                        <div class="stat-card fade-in" style="animation-delay: 0.1s">
+                            <div class="stat-value" id="streakCount">0</div>
+                            <div class="stat-label">Day Streak</div>
+                        </div>
+                        <div class="stat-card fade-in" style="animation-delay: 0.2s">
+                            <div class="stat-value" id="progressPercent">0%</div>
+                            <div class="stat-label">Journey Progress</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="level-detail.html?level=1" class="btn btn-primary btn-lg">
+                            <i class="fas fa-play"></i>
+                            Start Journey
+                        </a>
+                        <a href="levels.html" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-layer-group"></i>
+                            View All Levels
+                        </a>
+                        <a href="dashboard.html" class="btn btn-secondary btn-lg">
+                            <i class="fas fa-chart-line"></i>
+                            View Dashboard
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Progress Section -->
+            <section class="container mt-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">
+                            <div class="card-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            Your Progress Overview
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Overall Progress</span>
+                                <span id="detailedProgressPercent">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div id="detailedProgressBar" class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-overview mt-4">
+                            <div>
+                                <h4>Current Level</h4>
+                                <p class="text-primary" id="currentLevel">1</p>
+                            </div>
+                            <div>
+                                <h4>Total Score</h4>
+                                <p class="text-primary" id="totalScore">0 points</p>
+                            </div>
+                            <div>
+                                <h4>Next Milestone</h4>
+                                <p class="text-muted" id="nextMilestone">Complete Level 1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-header mt-5">
+            <div class="container nav-container">
+                <p class="text-muted">Md Imran Siddiqui</p>
+                <div class="flex gap-2">
+                    <a href="#" class="text-muted">Privacy</a>
+                    <span class="text-muted">•</span>
+                    <a href="#" class="text-muted">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

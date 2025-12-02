@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>60-Day Level Up Journey - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Navigation Header -->
+        <header class="site-header">
+            <div class="container nav-container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span>LevelUp</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="levels.html" class="nav-link">Levels</a></li>
+                        <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="score-display">
+                    <i class="fas fa-star score-icon"></i>
+                    <span id="dashboardScore">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Dashboard Header -->
+                <div class="dashboard-header">
+                    <div class="levels-header-content">
+                        <h1>Player Dashboard</h1>
+                        <p class="text-muted">Track your progress, statistics, and achievements</p>
+                    </div>
+                    <div class="levels-actions">
+                        <a href="index.html" class="btn btn-secondary">
+                            <i class="fas fa-home"></i>
+                            Home
+                        </a>
+                        <a href="levels.html" class="btn btn-secondary">
+                            <i class="fas fa-layer-group"></i>
+                            Levels
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dashboard Grid -->
+                <div class="dashboard-grid">
+                    <!-- Journey Progress Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <div class="card-icon">
+                                    <i class="fas fa-compass"></i>
+                                </div>
+                                Journey Progress
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="progress-circle-container">
+                                <svg class="progress-circle" width="200" height="200">
+                                    <circle class="circle-bg" cx="100" cy="100" r="90"></circle>
+                                    <circle class="circle-progress" cx="100" cy="100" r="90"></circle>
+                                </svg>
+                                <div class="circle-text">
+                                    <span id="circularProgressPercent" class="circle-value">0%</span>
+                                    <span class="circle-label">Complete</span>
+                                </div>
+                            </div>
+                            <div class="progress-stats mt-6">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-muted">Levels Completed</span>
+                                    <span id="completedLevelsCount" class="font-bold">0</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div id="completedProgressBar" class="progress-fill"></div>
+                                </div>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="text-muted">Remaining</span>
+                                    <span id="remainingLevelsCount" class="font-bold">60 levels</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Stats Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <div class="card-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                Performance Stats
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="stats-grid">
+                                <div class="stat-item-small">
+                                    <div class="stat-icon score-icon mb-2">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="stat-item-value" id="totalScore">0</div>
+                                    <div class="stat-item-label">Total Score</div>
+                                </div>
+                                <div class="stat-item-small">
+                                    <div class="stat-icon streak-icon mb-2">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <div class="stat-item-value" id="currentStreak">0</div>
+                                    <div class="stat-item-label">Current Streak</div>
+                                </div>
+                                <div class="stat-item-small">
+                                    <div class="stat-icon level-icon mb-2">
+                                        <i class="fas fa-flag"></i>
+                                    </div>
+                                    <div class="stat-item-value" id="currentLevelDisplay">1</div>
+                                    <div class="stat-item-label">Current Level</div>
+                                </div>
+                                <div class="stat-item-small">
+                                    <div class="stat-icon avg-icon mb-2">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <div class="stat-item-value" id="avgCompletion">0</div>
+                                    <div class="stat-item-label">Avg. Days/Level</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Streak Calendar Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <div class="card-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                Streak Calendar
+                            </h3>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="streak-display">
+                                <div class="streak-flame">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                                <div class="streak-info">
+                                    <span class="streak-count" id="streakCount">0</span>
+                                    <span class="streak-label">day streak</span>
+                                </div>
+                            </div>
+                            <p class="text-muted text-center mt-4">
+                                Keep completing levels daily to maintain your streak!
+                            </p>
+                            <div class="streak-history mt-6">
+                                <h4 class="mb-4">Recent Activity</h4>
+                                <div class="history-items" id="streakHistory">
+                                    <!-- Streak history will be dynamically generated here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Timeline Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <div class="card-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                Progress Timeline
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="timeline-container">
+                                <div class="timeline" id="timelineBars">
+                                    <!-- Timeline bars will be dynamically generated here -->
+                                </div>
+                                <div class="flex justify-center gap-6 mt-6">
+                                    <div class="legend-item">
+                                        <div class="legend-color completed"></div>
+                                        <span class="text-xs">Completed</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color current"></div>
+                                        <span class="text-xs">In Progress</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color locked"></div>
+                                        <span class="text-xs">Locked</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Actions -->
+                <div class="dashboard-actions mt-8">
+                    <div class="btn-group justify-center">
+                        <a href="levels.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-play"></i>
+                            Continue Journey
+                        </a>
+                        <button id="resetProgress" class="btn btn-danger btn-lg">
+                            <i class="fas fa-redo"></i>
+                            Reset Progress
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="text-muted">© 2024 LevelUp Tracker. Track your 60-day journey to mastery.</p>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Privacy</a>
+                        <a href="#" class="footer-link">Terms</a>
+                        <a href="#" class="footer-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
